@@ -1,0 +1,17 @@
+title: Tocuments
+email: your-email@example.com
+description: It's a mess
+
+#theme: jekyll-theme-leap-day
+
+# Build settings
+markdown: kramdown
+
+# Permalink for posts (not used in this project)
+permalink: /:categories/:year-:month-:day :title/index.html
+
+github_url : "https://github.com/tomnil/tomnil.github.io"
+
+collections:
+  articles:
+      output: true
