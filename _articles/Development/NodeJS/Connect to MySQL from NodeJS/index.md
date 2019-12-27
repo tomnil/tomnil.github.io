@@ -1,16 +1,13 @@
-# Quick start to using MySQL with NodeJS
+---
+layout: article
+title:  Example code to use MySQL from NodeJS
+description: 
+date:   2019-03-11
+tags: nodejs sql
+supertag: nodejs
+---
 
-## Installing mysql (and running it)
-
-```
-npm install mysql
-```
-
-TODO: Add info here
-
-## NodeJS script
-
-```
+```javascript
 const mysql = require('mysql')
 
 console.log("Attempting connect");
