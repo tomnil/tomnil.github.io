@@ -1,9 +1,15 @@
-
-# Shortcuts
+---
+layout: article
+title:  Tips and tricks for VSCode
+description: 
+date: 2019-12-07
+tags: vscode
+supertag: vscode
+---
 
 ## Search + open file
 
-![](searchfile.gif)
+![picture](searchfile.gif)
 
 ```ctrl-p``` + the name of the file.
 
@@ -11,7 +17,7 @@
 
 ### Join lines
 
-![](joinlines.gif)
+![picture](joinlines.gif)
 
 ```editor.action.joinLines```
 
@@ -23,7 +29,7 @@
 
 ### Add cursor
 
-![](addcursor.gif)
+![picture](addcursor.gif)
 
 Ctrl + Alt + Up arrow / Down arrow
 
