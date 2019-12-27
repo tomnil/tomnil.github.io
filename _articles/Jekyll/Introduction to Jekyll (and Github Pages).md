@@ -20,7 +20,7 @@ This zip file contains a fully working Jekyll site (which also is compatible wit
 1. Follow the guides to download an run locally, see: [https://jekyllrb.com/docs/installation/windows/](https://jekyllrb.com/docs/installation/windows/)
 2. Initialize an empty Github repo and add all files. Don't forget to enable Github pages.
 3. Clone the repo to your local drive
-4. [Download](EmptySite (Fully working with example articles).zip) and extract in this folder.
+4. [Download](https://www.dropbox.com/s/p3r4mfi9tjcw7h6/EmptySite%20%28Fully%20working%20with%20example%20articles%29.zip?dl=1) and extract in this folder.
 5. Build locally or push to Github.
 
 ## Jekyll Directory Structure

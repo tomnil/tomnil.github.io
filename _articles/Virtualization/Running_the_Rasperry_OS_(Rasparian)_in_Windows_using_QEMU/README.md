@@ -9,7 +9,7 @@ supertag: raspberrypi
 
 ## Setup
 
-Download and extract this [RasparianOnWindows](RasparianOnWindows.zip) with all needed tools and additional BAT-files to make this really simple to setup.
+Download and extract this [RasparianOnWindows](https://www.dropbox.com/s/we8v2sqayiyjh3s/RasparianOnWindows.zip?dl=1) with all needed tools and additional BAT-files to make this really simple to setup.
 
 `!` This setup i based on the [Raspberry Pi emulation for Windows](https://sourceforge.net/projects/rpiqemuwindows/).
 
