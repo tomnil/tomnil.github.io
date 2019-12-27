@@ -2,16 +2,31 @@ title: Tocuments
 email: your-email@example.com
 description: It's a mess
 
+# Where things are / Commented out - use default options!
+#source              : .
+#destination         : ./_site
+#collections_dir     : .
+#plugins_dir         : _plugins
+#layouts_dir         : _layouts
+#data_dir            : _data
+#includes_dir        : _includes
+
+# When copying to _site folder:
+exclude             : [ "node_modules", "package-lock.json"]
+
+
+
 #theme: jekyll-theme-leap-day
 
 # Build settings
 markdown: kramdown
 
-# Permalink for posts (not used in this project)
+# Global permalink 
 permalink: /:categories/:year-:month-:day :title/index.html
 
 github_url : "https://github.com/tomnil/tomnil.github.io"
 
 collections:
-  articles:
+  articles:   # Will process the _articles folder
       output: true
+

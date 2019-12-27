@@ -1,18 +1,9 @@
-html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+:root {
+    /* solid | none */
+    --global-border: none;
 }
 
-/* Wrapper */
-
-.wrapper {
-    width: 650px;
-    margin: 0 auto;
-    position: relative;
-}
-
-/* Standard stuff */
+/* Page level */
 
 body {
     font: 14px/22px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -23,13 +14,143 @@ body {
     background: #eae6d1;
 }
 
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Header */
+
+header {
+    border: var(--global-border);
+    padding: 25px 20px 40px 20px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: left;
+    background: #4276b6;
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    z-index: 99;
+    -webkit-font-smoothing: antialiased;
+    min-height: 76px;
+}
+
+header h1 {
+    border: var(--global-border);
+    font: 40px/48px 'Copse', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #f3f3f3;
+    text-shadow: 0px 2px 0px #235796;
+    margin: 0px;
+    margin-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+header p {
+    border: var(--global-border);
+    color: #d8d8d8;
+    text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
+    font-size: 18px;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+/* navandcontent */
+
+.navandcontent {
+    border: var(--global-border);
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Navigation inside navandcontent */
+nav {
+    border: var(--global-border);
+    width: 280px;
+    position: fixed;
+    top: 190px;
+    left: 50%;
+    margin-left: -750px;
+    text-align: right;
+}
+
+/* Styling of navigation links */
+
+div.colorit {
+    background: #ece8d3;
+}
+
+div.colorit:nth-child(odd) {
+    background: #e8e4cf
+}
+
+div.coloritgrey {
+    background: #ddd;
+}
+
+div.coloritgrey:nth-child(odd) {
+    background: #eee
+}
+
+div.alignleft {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+div.alignright {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+/* Main content */
+
+section {
+    border: var(--global-border);
+    width: 840px;
+    padding: 30px 30px 50px 30px;
+    margin: 20px 0;
+    margin-top: 170px;
+    position: relative;
+    background: #fbfbfb;
+    border-radius: 3px;
+    border: 1px solid #cbcbcb;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Footer (below nav) */
+
+footer {
+    border: var(--global-border);
+    width: 280px;
+    position: fixed;
+    left: 50%;
+    margin-left: -750px;
+    bottom: 20px;
+    text-align: right;
+    line-height: 16px;
+}
+
+/* All the rest */
+
 h1 {
     margin: 0 0 10px;
     line-height: 1.1;
     font-size: 28px;
+    color: #000;
 }
 
 h2 {
+    padding-top: 4px;
     margin: 0 0 5px;
     line-height: 1.1;
     font-size: 24px;
@@ -37,7 +158,8 @@ h2 {
 }
 
 h3 {
-    margin: 0 0 0px;
+    padding-top: 8px;
+    margin: 0 0 5px;
     font-size: 18px;
     line-height: 24px;
     color: #666666;
@@ -66,19 +188,20 @@ blockquote {
 }
 
 code {
-    font-family: 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+    border: var(--global-border);
+    font-family: Lucida Console, Terminal;
     font-size: 13px;
     color: #efefef;
     text-shadow: 0px 1px 0px #000;
     margin: 0 4px;
     padding: 2px 6px;
-    background: rgb(62, 0, 161);
+    background: rgb(100, 100, 100);
     border-radius: 2px;
 }
 
 pre {
     padding: 8px 15px;
-    background: rgb(62, 0, 161);
+    background: rgb(100, 100, 100);
     border-radius: 3px;
     border: 1px solid #c7c7c7;
     overflow: auto;
@@ -86,6 +209,7 @@ pre {
 }
 
 table {
+    border: var(--global-border);
     width: 100%;
     border-collapse: collapse;
 }
@@ -111,95 +235,4 @@ td:first-child {
 dt {
     color: #444;
     font-weight: 700;
-}
-
-/* Header */
-
-header {
-    padding: 25px 20px 40px 20px;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    background: #4276b6;
-    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
-    z-index: 99;
-    -webkit-font-smoothing: antialiased;
-    min-height: 76px;
-}
-
-header h1 {
-    font: 40px/48px 'Copse', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #f3f3f3;
-    text-shadow: 0px 2px 0px #235796;
-    margin: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-}
-
-header p {
-    color: #d8d8d8;
-    text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
-    font-size: 18px;
-    margin: 0px;
-}
-
-/* Banner */
-
-#banner {
-    z-index: 100;
-    left: 0;
-    right: 50%;
-    height: 50px;
-    margin-right: -382px;
-    position: fixed;
-    top: 115px;
-    background: #ffcc00;
-    border: 1px solid #f0b500;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 2px 2px 0px;
-    padding-right: 10px;
-}
-
-/* Section */
-
-section {
-    width: 590px;
-    padding: 30px 30px 50px 30px;
-    margin: 20px 0;
-    margin-top: 190px;
-    position: relative;
-    background: #fbfbfb;
-    border-radius: 3px;
-    border: 1px solid #cbcbcb;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
-}
-
-/* Nav (navigation) */
-
-nav {
-    width: 230px;
-    position: fixed;
-    top: 220px;
-    left: 50%;
-    margin-left: -580px;
-    text-align: right;
-}
-
-/* Footer (below nav) */
-
-footer {
-    width: 180px;
-    position: fixed;
-    left: 50%;
-    margin-left: -530px;
-    bottom: 20px;
-    text-align: right;
-    line-height: 16px;
 }
