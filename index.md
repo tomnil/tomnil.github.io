@@ -2,8 +2,6 @@
 layout: default
 ---
 
-## tomnil.github.io
-
 This site is my notebook for all kinds of technical problems and solutions I've come across during the years working with computers. I hope you will find some of the information here helpful.
 
 If you need to reach out to me, please view the [About](about) page.
