@@ -23,13 +23,13 @@ Download the [com-xiaomi-smarthome-5.4.54.apk](https://android-apk.org/com.xiaom
 
 ![Screenshot from phone](2020-01-22-09-10-29.png)
 
-* Search the log the token:
+* Search the log for token:
 
-<pre>
+```JSON
 SmartHome 2082144:[DEBUG]-01-22 09:02:32.187 processResult in result={"code":0,
 "message":"ok","result":{"list":[{"did":"118130606",
-"token":<b>"754aaaaaaabcdefabcdefabce2345671"</b>,"longitude":"0.00000000",
+"token":"754aaaaaaabcdefabcdefabce2345671","longitude":"0.00000000",
 "latitude":"0.00000000","name":"Robot vacuum","pid":"0","localip":...
-</pre>
+```
 
 Note, make sure you pick the right token, *all* Xiaomi devices (and tokens) you have will be listed in the log file.
