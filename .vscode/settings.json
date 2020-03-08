@@ -3,5 +3,9 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"workbench.tree.indent": 25,
-	"workbench.tree.renderIndentGuides": "always"
+	"workbench.tree.renderIndentGuides": "always",
+	"markdownlint.config": {
+		"MD026": false,
+		"MD045": false
+	}
 }
