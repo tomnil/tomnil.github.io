@@ -32,7 +32,9 @@ Go to More ==> Logic ==> and add the following three variables as numbers. Set a
 
 ## Measuring the light:
 
-Let's store the measured luminance in a the variable "vLightTemp". This variable will go from 0 to 1.0. In terms of hardware, the MultiSensor 6 works great.
+Let's store the measured luminance in a the variable "vLightTemp". This variable will go from 0 to 1.0.
+
+Note, not all hardware does a good job. I've tested a couple, and realized the MultiSensor 6 works great. See below for tips on settings.
 
 ![](2020-03-08-21-31-31.png)
 
@@ -64,6 +66,10 @@ Then look at the graphs, they should look something like this (over time):
 
 ![graph](2020-03-11-07-48-12.png)
 
+Also, if you examine the measured value compared with vLightTemp, then vLightTemp should have a "roof" (above 1000).
+
+![graph2](2020-03-11-08-09-41.png)
+
 ## Debugging
 
 Send a message to Slack and view any variables there, or view all the variables on [API Playground](https://developer.athom.com/tools/api-playground) and run the following script:
@@ -71,6 +77,25 @@ Send a message to Slack and view any variables there, or view all the variables 
 ```javascript
 Homey.logic.getVariables()
 ```
+
+## The Multisensor 6 settings
+
+There's a number of settings on the Multisensor 6 that can be changed to make a fairly proper measurement and still not drain on battery. Go to advanced settings:
+
+![settings1](2020-03-11-08-14-35.png)
+
+![settings2](2020-03-11-08-15-03.png)
+
+This is how I belive the Multisensor 6 works. You can configure the sensor to send updates every 600 seconds, but *it will only send if there's something to send*. This is the threshold values are used for: "If luminance has changed more than 100, then at the end of the timer, send the values to Homey".
+
+So if you want frequent updates (and more battery drain), send updates often.
+
+|Name|Value|Description|
+|-|-|-|
+|Luminance Threshold|10|This will schedule an update if the change is more than 1% (in the range 0-1000)|
+|Update values(s) interval|600|Send update every 10 minutes (if any change)|
+
+The wake-up-interval then? I think this is to force an update, regardless if the values has changed or not.
 
 ## Enjoy
 
