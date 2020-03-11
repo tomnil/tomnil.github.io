@@ -9,7 +9,7 @@ supertag: homey
 
 ## Create the needed variables
 
-Go to More ==> Logic ==> and add the following three variables:
+Go to More ==> Logic ==> and add the following three variables as numbers. Set all three to 0 (they will be overwritten by the flow anyway)
 
 * vLightTemp
 * vLightPercent
@@ -40,6 +40,16 @@ At the same time, calculate vDarkPercent (so if it's full daylight, vBrightPerce
 ![](2020-03-08-21-36-47.png)
 
 :!: For the step of calculating vDarkPercent, you *must* use vLightTemp. If you use vLightPercent you will get the wrong number (basically the old value will be used, making sure vDarkPercent is always one step behind)
+
+## See the variables in action
+
+Go to [Insights](https://insights.homey.app/) and tick:
+
+![select](2020-03-11-07-49-06.png)
+
+Then look at the graphs, they should look something like this (over time):
+
+![graph](2020-03-11-07-48-12.png)
 
 ## Debugging
 
