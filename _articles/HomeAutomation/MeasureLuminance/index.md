@@ -7,6 +7,19 @@ tags: homeautomation homey
 supertag: homey
 ---
 
+## What to expect
+
+By following this article, you will get two usable variables. One for how bright it is (vLightPercent) and one how dark it is (vDarkPercent). This means the following:
+
+| Measured | vLightPercent | vDarkPercent |
+|-|-|-|
+|0|0|1|
+|100|0.1|0.9|
+|500|0.5|0.5|
+|900|0.9|0.1|
+|1000|1|0|
+|2500|1|0|
+
 ## Create the needed variables
 
 Go to More ==> Logic ==> and add the following three variables as numbers. Set all three to 0 (they will be overwritten by the flow anyway)
