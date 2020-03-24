@@ -30,7 +30,9 @@ let jwt = jsonwebtoken.sign(jwtcontents, signingpassword, { expiresIn: 3600 });
 console.log(jwt);
 ```
 
-Running this will produce something as ```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTg1MDQyMzgwLCJleHAiOjE1ODUwNDU5ODB9.POpmV8sQNU4VrqI8ZbRGd4GBUdEuPhmDVIGci5EPSNY```.
+Running this will produce something as ```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTg1MDQyMzgwLCJleHAiOjE1ODUwNDU5ODB9.
+POpmV8sQNU4VrqI8ZbRGd4GBUdEuPhmDVIGci5EPSNY```.
 
 1. JWTs are encoded, but can easily be decoded. For example, check out [https://jwt.io/](https://jwt.io/)). Also note the two "." inside the JWT which indiciates the three internal parts.
 2. JWTs are signed to ensure the contents isn't modified
@@ -41,27 +43,39 @@ Running this will produce something as ```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e
 In order to issue an JWT, you must implement a ```/login``` call. It can be something as simple as this (note, you need password to sign your token with, in this case stored in ```config.jwt.key```.)
 
 ```javascript
-app.post(`/login`, (req, res) => {
+  app.post(`/login`, (req, res) => {
 
-    const { username, password } = req.body;
+        const { username, password } = req.body;
 
-    let user = userlist.find(username);
-    if (user && user.login(password)) {
+        if (!(username && password)) {
+            res.status(401).json({ error: "Need username and password" });
+        }
+        else {
 
-            let jwtcontents = {
-                username: username,
+            // Fake user login :)
+            // let user = userlist.find(username);
+            let user = {
+                login: () => { return true; }
             }
 
-            let jwt = jsonwebtoken.sign(jwtcontents, config.jwt.key, { expiresIn: 3600 });
+            if (user && user.login(password)) {
 
-            res.json({ token: jwt });
-    }
-    else
-        res.json({ message: "Bad username or password" });
+                let jwtcontents = {
+                    username: username,
+                }
 
-    res.end();
+                let jwt = jsonwebtoken.sign(jwtcontents, config.jwt.key, { expiresIn: 3600 });
 
-});
+                res.json({ token: jwt });
+            }
+            else
+                res.json({ message: "Bad username or password" });
+
+        }
+
+        res.end();
+
+    });
 ```
 
 ## Client: Fetching the JWT
@@ -93,10 +107,13 @@ Using express you can register a middleware that processes all incoming requests
 
 ```javascript
 app.use(function decode(req, res, next) {
-    let result = getAndDecodeToken(req);  // See below on the gettoken call
+
+    let result = decodeToken(req);  // See below on the gettoken call
     if (result) {
 
-        // This is a neat trick :)
+        // console.log("setupInterceptMiddleware():\tA valid token was found: Decoded result=" + JSON.stringify(result));
+
+        // This is a neat trick :) Why? See /ping1 call
         req.me = {
             username: result.username
         }
@@ -104,21 +121,24 @@ app.use(function decode(req, res, next) {
     next();
 });
 
-function getAndDecodeToken(req){
+function decodeToken(req) {
+
+    let result;
 
     if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
 
         // Get the JWT
-        let token=req.headers.authorization.split(' ')[1];
+        let token = req.headers.authorization.split(' ')[1];
 
         // Verify the token (make sure it's not modified) using our secret key
-        let result = jsonwebtoken.verify(iToken, config.jwt.key);
-
-        // Debug :)
-        console.log(`Hello, ${result.username}`);
-
-        return result
+        try {
+            result = jsonwebtoken.verify(token, config.jwt.key);
+        } catch (error) {
+            console.log("decodeToken(): Could not verify & decode token. Error=" + error);
+        }
     }
+
+    return result; // Return undefined if not found/not valid
 }
 ```
 
@@ -129,45 +149,53 @@ Now this is where the magic happens.
 If the client supplies a valid JWT, then the current request (req) will contain the username in ```req.me.username```.
 
 ```javascript
+function OnlyAuthenticatedMiddleware(req, res, next) {
 
-    OnlyAuthenticatedMiddleware(req, res, next) {
-
-        // If the token was decoded properly, then run next()
-        if (req.me && req.me.username) {
-            next()
-        }
-        else {
-            // Sorry, you need to authenticate (error 401)
-            res.status(401).json({ error: "Token expired" });
-            res.end();
-        }
+    // If the token was decoded properly, then run next()
+    if (req.me && req.me.username) {
+        next()
     }
+    else {
+        // Sorry, you need to authenticate (error 401)
+        res.status(401).json({ error: "Token expired" });
+        res.end();
+    }
+};
 ```
 
 To use this
 
 ```javascript
+app.get(`/ping1`, OnlyAuthenticatedMiddleware, (req, res) => {
 
-    app.post(`/ping1`, OnlyAuthenticatedMiddleware, (req, res) => {
-        // This piece of code will not be reached if req.me.username is missing
-        res.json({ pong: `Hello, ${req.me.username}` })
+    // Try to access this code with both a valid and an expired token (the latter will fail
+    // because it passes the middleware OnlyAuthenticatedMiddleware).
+
+    console.log(`/ping1: Username=${req.me.username}`);
+    res.json({ pong: `Hello from ping1. Username=${req.me.username}` })
+
+});
+
+app.get(`/ping2`, (req, res) => {
+
+    // Try to access this code with both a valid and an expired token (both will work,
+    // but without logging in "Hello guest" will be returned)
+
+    if (req.me && req.me.username) {
+        console.log(`/ping2: Username=${req.me.username}`);
+        res.json({ pong: `Hello from ping2. You are authenticated with username=${req.me.username}` })
     }
-
-    app.post(`/ping2`, (req, res) => {
-
-        if (req.me && req.me.username){
-            res.json({ pong: `Hello, ${req.me.username}` })
-        }
-        else
-            res.json({ pong: `Hello guest` })
+    else {
+        console.log(`/ping2: Username not found (no valid token)`);
+        res.json({ pong: `Hello guest` })
     }
-
+});
 ```
 
 ## The full code
 
 ```javascript
-<% include minijwt.js %>
+<% include_relative minijwt.js %>
 ```
 
 ### Executing /login
