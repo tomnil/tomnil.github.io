@@ -195,7 +195,7 @@ app.get(`/ping2`, (req, res) => {
 ## The full code
 
 ```javascript
-<% include_relative minijwt.js %>
+{% include_relative minijwt.js %}
 ```
 
 ### Executing /login
