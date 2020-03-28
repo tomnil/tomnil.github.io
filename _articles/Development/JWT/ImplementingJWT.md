@@ -206,10 +206,11 @@ with payload:
 
 ```json
 {
-	"username": "a",
-	"password": "b"
+  "username": "a",
+  "password": "b"
 }
 ```
+
 ## Advanced topics
 
 ### Implementing logout

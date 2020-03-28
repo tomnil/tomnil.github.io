@@ -1,3 +1,4 @@
+
 const jsonwebtoken = require('jsonwebtoken');
 const express = require("express");
 const bodyparser = require('body-parser')
@@ -151,8 +152,4 @@ function decodeToken(req) {
     }
 
     return result; // Return undefined if not found/not valid
-}
-
-function login() {
-
 }
