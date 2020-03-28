@@ -60,7 +60,7 @@ Functions can be defined with either old style syntax ```function myname(paramet
 :!: This applies for node v12 and higher (check your version by running ```node -v```).
 
 ```javascript
-<% include classes.js %>
+{% include_relative classes.js %}
 ```
 
 ## getters and setters
