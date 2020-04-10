@@ -3,8 +3,8 @@ layout: article
 title:  Update Story Points on parent issue based on estimated time left in subtasks using Scriptrunner in Jira Cloud NextGen projects
 description:
 date: 2020-04-03
-tags: development
-supertag: development
+tags: development jira
+supertag: jira
 ---
 
 ## Jira Cloud & NextGen projects limitations
@@ -14,6 +14,8 @@ NextGen projects are good, but much stuff is built around story points (for exam
 ![](2020-04-03-20-57-01.png)
 
 This document describes how to use the time tracking fields to update the story points of the parent issue :)
+
+Ps. Also check out the solution to this problem, but in "v2.0" style [here](StoryPointsForAll.md).
 
 ## Prereqs
 

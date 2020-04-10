@@ -3,15 +3,13 @@ layout: article
 title:  How to setup Postman for Jira Cloud.
 description:
 date: 2020-04-03
-tags: postman
-supertag: postman
+tags: jira postman
+supertag: jira
 ---
 
 ## Token or ..?
 
-Basic authentication is going away, so grab a token from [
-https://id.atlassian.com/manage/api-tokens](
-https://id.atlassian.com/manage/api-tokens).
+Basic authentication is going away, so grab a token from [https://id.atlassian.com/manage/api-tokens](https://id.atlassian.com/manage/api-tokens).
 
 Important! You still pass these parameters as Basic Authentication in Postman, but rather than Email+Password, you pass Email+**API Token**. And to maybe solve some more confusions, the documentation for how to authenticate has a number of bad examples floating around. If you want to know all about it, read [this](https://jira.atlassian.com/browse/JRACLOUD-72405) article.
 
