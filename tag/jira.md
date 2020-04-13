@@ -1,7 +1,6 @@
 ---
 layout: taglist
 tag: jira
-permalink: /tags/tag: jira
-/ 
+permalink: /tags/jira/ 
 ---
 
