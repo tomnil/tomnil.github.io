@@ -97,6 +97,11 @@ In the root of the project, create ```tsconfig.json``` or ```movingtotypescript.
 	"include": [
 		"src/**/*.js",
 		"src/**/*.ts"
+	],
+	"exclude": [
+		"test",
+		"bin",
+		"out",
 	]
 }
 ```
@@ -353,6 +358,29 @@ to:
 ```javascript
 const logger = require("../include/myfile");
 ```
+
+## Resolve: TS6059: File 'abc' is not under 'rootDir'
+
+If you have folders at the same level as ```src``` you will get this message. Exclude the folders by adding this to ```tsconfig.json```:
+
+```json
+...
+	"include": [
+		"src/**/*.js",
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"test",
+		"bin",
+		"out",
+		"additionalFolderToSkip"
+	]
+
+```
+
+## Resolve TS2451: Cannot redeclare block-scoped variable 'xyz'.
+
+Now, if you try to compile as-is using ```tsc``` and you haven't changed your require statements, you might get this error. so *Search "require" - replace "imports"* and modify your *module.exports* as below.
 
 ## Search "require" - replace "imports"
 
