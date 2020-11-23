@@ -368,7 +368,7 @@ module.exports = { Function1, Function2, Function3}
 # Phase 6 - Going to modules
 
 Now, I wrote a ```hack``` that does most of the work in this step. Download it here:
-```fixmodules.ts```. It's written in typescript and requires a) ```ts-node``` to be installed. b) that package.json and does *not* have type: "module" setting.
+[fixmodules.ts](fixmodules.ts). It's written in typescript and requires a) ```ts-node``` to be installed. b) that package.json and does *not* have type: "module" setting.
 
 If you want to do it manually, do the following:
 
