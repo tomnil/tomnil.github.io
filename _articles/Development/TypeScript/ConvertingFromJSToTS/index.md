@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Step-by-step setting up TypeScript with ES2020 in vscode (including debugging and without transpiling)
+title: Convert to Typescript
 description:
 date: 2020-07-16
 tags: vscode typescript
@@ -53,7 +53,7 @@ npm install -g nodemon
 
 ## Eslint
 
-Well, this is an important one not covered by this document :)
+Well, that's an important tool, but not covered by this document :)
 
 # Phase 2 - Configuring your project for typescript
 
@@ -165,6 +165,9 @@ dir out
 
 # or if you've used the detfault name of tsconfig.json
 tsc -p .
+
+# With automatic recompile on file change:
+tsc -b -v -p movingtotypescript.json --incremental --watch
 ```
 
 Examine the errors and try to resolve them, one by one. Also skip to Phase 4 below, because there's important information about how to run the project right now.
@@ -179,7 +182,7 @@ error TS2339: Property 'myVariable' does not exist on type 'Global & typeof glob
 
 Solution:
 
-In a .ts file, define the object. Here's some examples to get past this problem *for now*.
+In a **.ts** file, define the object. Here's some examples to get past this problem *for now*.
 
 ```typescript
 declare global {
@@ -241,6 +244,19 @@ Solution: Change
 * returns {Promise<boolean>}
 * returns {Promise<Object>}		// For both arrays and Json
 ```
+
+Also, using JSDOC, it's possible to even further get closer to a TypeScript environment:
+
+```typescript
+/**
+ * Test
+ * @inner
+ * @param {import('../some/file').Customer} iCustomerObject
+ */
+function Test (iCustomerObject) { ...}
+```
+
+```tsc``` will respect this comment and treat ```iCustomerObject``` as the object exported by ```/some/file```. Also, as a nice bonus, this adds intellisense when writing the function Test.
 
 ## Missing types modules errors
 
@@ -331,9 +347,105 @@ I suggest to create a ```nodemon.json``` config file:
 nodemon ts-node --inspect=9229 ./src/index.js
 ```
 
-# Phase 5 - The Deep dive (rename all files)
+# Phase 5 - Making upfront changes (so Phase 6 becomes much easier)
 
-Now, this is where it gets interesting. Renaming the files will disable some features, and add others.
+## module.exports
+
+If your code looks like this:
+
+```javascript
+module.exports.Function1 = Function1;
+module.exports.Function2 = Function2;
+module.exports.Function3 = Function3;
+```
+
+... then do this:
+
+```javascript
+module.exports = { Function1, Function2, Function3}
+```
+
+# Phase 6 - Going to modules
+
+Now, I wrote a ```hack``` that does most of the work in this step. Download it here:
+```fixmodules.ts```. It's written in typescript and requires a) ```ts-node``` to be installed. b) that package.json and does *not* have type: "module" setting.
+
+If you want to do it manually, do the following:
+
+## Add extensions on require
+
+Add .js on require. Change from:
+
+```javascript
+const logger = require("../include/myfile");
+```
+
+to:
+
+```javascript
+const logger = require("../include/myfile.js");
+```
+
+## Search "require" - replace "imports"
+
+Change all require from this:
+
+```javascript
+const bodyParser = require("body-parser");
+```
+
+to this:
+
+```javascript
+import bodyParser from ("body-parser");
+```
+
+:!: In vscode, use this regex to change many of the requires to imports. This is not perfect in any way, the ```fixmodules.ts``` script does a decent job compared to this.
+
+Press ```ctrl-shift-h```, and make sure you tick "regex":
+
+```javascript
+// Search
+^\w+\s+(\w+)\s+=\s+require\((["'].*["'])\);{0,1}$
+
+// Replace
+import $1 from $2;
+```
+
+![](2020-07-16-22-30-25.png)
+
+## Search "module.exports" and replace..
+
+Well, this is hard. There are no silver bullet for this one, even if you try to do search/replace, there will be errors left.
+
+```typescript
+// from
+module.exports = { Function1, Function2, Function3 }
+// to
+export { Function1,	Function2, Function3 }
+```
+
+## Modify ```package.json``` (important!)
+
+Open your package.json and make sure it DOES have type: "module" setting:
+
+```json
+{
+	"name": "my project1",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	 ...
+}
+```
+
+## Test
+
+Run ```tsc -b -v``` and use ```eslint``` to find errors. Resolve as many as possible.
+
+# Phase 7 - The deep dive (Renaming all files to .ts)
+
+Now, this is where it gets interesting. Renaming the files will disable some features, and add many others.
 
 ## Rename movingtotypescript.json to tsconfig.json
 
@@ -345,19 +457,26 @@ With the setting of allowing js to be included, it's not *really* a must to rena
 
 After you've done these two steps, vscode will show you all errors under "Problems"
 
-## Remove extensions on require
+## Imports...
 
-Remove all .js on require. Change from:
+Well, as equally important it was before to use the file extension ```import * as xyz from 'xyz.js'```, as equally important it is to remove it now.
 
-```javascript
-const logger = require("../include/myfile");
+So, make another regex search/replace:
+
+```regex
+from:   (import.*)['|"](.*).js['|"]
+to:     $1 '$2'
 ```
 
-to:
+# Phase 8 - Resolving errors in TypeScript
 
-```javascript
-const logger = require("../include/myfile");
+Finding errors is easy - but the best error messages will be given by running:
+
+```bash
+tsc -p mytsconfig.json
 ```
+
+Some of these can easily be resolved, others will require you to redesign your code. Still, you can ask TypeScript to fallback to old javascript features - which probably is OK for many cases. Turning a project into 100% TypeScript isn't done in a heartbeat.
 
 ## Resolve: TS6059: File 'abc' is not under 'rootDir'
 
@@ -380,63 +499,7 @@ If you have folders at the same level as ```src``` you will get this message. Ex
 
 ## Resolve TS2451: Cannot redeclare block-scoped variable 'xyz'.
 
-Now, if you try to compile as-is using ```tsc``` and you haven't changed your require statements, you might get this error. so *Search "require" - replace "imports"* and modify your *module.exports* as below.
-
-## Search "require" - replace "imports"
-
-Change all require from this:
-
-```javascript
-const bodyParser = require("body-parser");
-```
-
-to this:
-
-```javascript
-import bodyParser from ("body-parser");
-```
-
-:!: In vscode, use this regex to fix some of the problems. ```ctrl-shift-h```, and make sure you tick "regex"
-
-```regex
-Search:   ^\w+\s+(\w+)\s+=\s+require\((["'].*["'])\);{0,1}$
-Replace:  import $1 from $2;
-```
-
-![](2020-07-16-22-30-25.png)
-
-## Search "module.exports" and replace..
-
-```typescript
-// from
-module.exports.Function1 = Function1;
-module.exports.Function2 = Function2;
-module.exports.Function3 = Function3;
-// to
-export = {
-		Function1 : Function1,
-		Function2 : Function2,
-		Function3  : Function3
-		}
-```
-
-```typescript
-// from
-module.exports = MyClass1
-// to
-export default MyClass1
-```
-
-```typescript
-// from
-module.exports = {	Function1,	Function2,	Function3 }
-// to
-export = {	Function1,	Function2,	Function3 }
-```
-
-# Phase 6 - Resolving errors in TypeScript
-
-Now, there's a numbe of errors occurring here. Some can easily be resolved, others will require you to redesign your code. Still, you can ask TypeScript to fallback to old javascript features - which probably is OK for now. Turning a project into 100% TypeScript isn't done in a heartbeat.
+Now, if you try to compile as-is using ```tsc``` and you haven't changed your require statements, you might get this error. See above how to do this.
 
 ## Json objects : any
 
@@ -455,7 +518,7 @@ let a = {};
 a.type = "fruit";
 ```
 
-By manually setting the type "any" on a object, it will become old-style-javascript compatible.
+By manually setting the type "any" on a object, it will become old-style-javascript compatible. Or use ```unknown``` as type (or both :)
 
 ```javascript
 // replace
@@ -549,7 +612,7 @@ Add the types as:
 
 ```
 
-# Phase 7 - Fixing some annoyances
+# Phase 9 - Fixing some annoyances
 
 ## Remove "out" from search results
 
