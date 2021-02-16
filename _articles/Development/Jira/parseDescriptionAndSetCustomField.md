@@ -15,11 +15,10 @@ It's possible to configure Jira to automatically create (and update) issues from
 Text from email
 /John Smith
 
-[Created via e-mail received from: Tomas Nilsson <tomas.nilsson@cloudistsolutions.com>]
-``` 
+[Created via e-mail received from: Tomas Nilsson <john@smith.com>]
+```
 
 ### Parsing the description using ScriptRunner
-
 
 ```groovy
 def inputIssueID = ""; 
