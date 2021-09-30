@@ -1,0 +1,14 @@
+
+
+## Interface vs Class (TS2749)
+
+Error:
+
+```typescript
+error TS2749: 'User' refers to a value, but is being used as a type here. Did you mean 'typeof User'?
+```
+
+Now,
+
+## Cannot use namespace 'User' as a type (TS2709)
+
