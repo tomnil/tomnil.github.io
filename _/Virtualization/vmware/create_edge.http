@@ -1,0 +1,37 @@
+POST https://vdc.company.com/api/admin/vdc/ORGID/edgeGateways
+Accept: application/*+xml;version=31.0
+Content-Type: application/vnd.vmware.admin.edgeGateway+xml
+x-vcloud-authorization: THE_TOKEN
+
+<?xml version="1.0" encoding="UTF-8"?>
+<EdgeGateway name="theEdge" xmlns="http://www.vmware.com/vcloud/v1.5">
+   <Description>Example Edge Gateway</Description>
+   <Configuration>
+      <GatewayBackingConfig>compact</GatewayBackingConfig>
+      <GatewayInterfaces>
+         <GatewayInterface>
+            <Name>public_net</Name>
+            <DisplayName>uplink1</DisplayName>
+            <Network 
+                href="https://vdc.company.com/api/admin/network/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" 
+                id="urn:vcloud:network:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"
+                name="NETWORKNAME"
+                type="application/vnd.vmware.admin.network+xml"/>            
+            <InterfaceType>uplink</InterfaceType>
+            <SubnetParticipation>
+               <Gateway>193.111.111.1</Gateway>
+               <Netmask>255.255.255.0</Netmask>
+               <SubnetPrefixLength>24</SubnetPrefixLength>
+               <IpAddress>193.234.102.59</IpAddress>
+               <UseForDefaultRoute>true</UseForDefaultRoute>
+            </SubnetParticipation>
+            <ApplyRateLimit>true</ApplyRateLimit>
+            <InRateLimit>100.0</InRateLimit>
+            <OutRateLimit>100.0</OutRateLimit>
+            <UseForDefaultRoute>true</UseForDefaultRoute>
+         </GatewayInterface>
+      </GatewayInterfaces>
+      <HaEnabled>false</HaEnabled>
+      <UseDefaultRouteForDnsRelay>false</UseDefaultRouteForDnsRelay>
+   </Configuration>
+</EdgeGateway>
