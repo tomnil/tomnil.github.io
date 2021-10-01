@@ -1,11 +1,4 @@
----
-layout: article
-title:  How to update Proxmox to the latest release (without buying an subscription)
-description:
-date: 2019-02-21
-tags: virtualization proxmox 
-supertag: proxmox
----
+# 2019-02-21 How to update Proxmox to the latest release (without buying an subscription)
 
 SSH to the Proxmox machine (or open locally). Edit as:
 

@@ -1,11 +1,4 @@
----
-layout: article
-title:  Windows capabilities => Get-WindowsCapability vs DISM
-description: 
-date: 2020-09-24
-tags: windows
-supertag: windows
----
+# 2020-09-24 Windows capabilities => Get-WindowsCapability vs DISM
 
 
 ## Listing available capabilities

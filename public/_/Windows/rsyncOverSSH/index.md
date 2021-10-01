@@ -1,11 +1,4 @@
----
-layout: article
-title: rsync over ssh between two Windows machines
-description: 
-date: 2020-11-23
-tags: windows
-supertag: windows
----
+# 2020-11-23 rsync over ssh between two Windows machines
 
 ## Description
 

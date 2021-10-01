@@ -1,11 +1,4 @@
----
-layout: article
-title: vCloud - postman setup
-description:
-date: 2020-07-18
-tags: vmware virtualization postman
-supertag: vmware
----
+# 2020-07-18 vCloud - postman setup
 
 ## Create a local user
 

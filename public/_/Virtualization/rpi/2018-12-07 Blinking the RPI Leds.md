@@ -1,13 +1,7 @@
----
-layout: article
-title:  How to blink the led on the Raspberry PI
-description:
-date: 2017-04-15
-tags: raspberrypi
-supertag: raspberrypi
----
+# 2017-04-15 How to blink the led on the Raspberry PI
 
 blink.sh
+
 ```bash
 #!/bin/bash
 while :

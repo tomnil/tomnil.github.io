@@ -1,13 +1,4 @@
----
-layout: article
-title:  Install Proxmox 6.3 on Intel Nuc
-description:
-date: 2020-02-05
-tags: virtualization proxmox 
-supertag: proxmox
----
-
-
+# 2020-02-05 Install Proxmox 6.3 on Intel NUC
 
 SSH to the Proxmox machine (or open locally). Edit as:
 

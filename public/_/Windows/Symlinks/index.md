@@ -1,24 +1,17 @@
----
-layout: article
-title:  Make a remote (NAS) folder to look like a local folder using Symlink
-description: 
-date:  2020-03-10
-tags: windows
-supertag: windows
----
+# 2020-03-10 Make a remote (NAS) folder to look like a local folder using Symlink
 
 ## Symbolic link and junctions
 
 There are differences such as:
 
-| Junctions                                                   | Symbolic Links                                                            |
-|-------------------------------------------------------------|---------------------------------------------------------------------------|
-| Must be local                                               | Can target an remote path (eg UNC Path)                                   |
-| Path must be absolute (eg: c:\mydirectory)                  | Paths can be absolute or relative                                         |
-| No special rights required                                  | Requires admin (elevated) to create                                       |
-| Is listed as (dir in cmd): ```<JUNCTION>     Banana [c:\fruit]``` | Is listed as: ```<SYMLINKD>     Banana [\\server\fruit]```                      |
-| "Dir Banana" will list all files and their size             | Same as Junctions                                                         |
-| Viewing properties in explorer views a "real folder"        | Viewing properties in explorer views "File folder" (bascially a shortcut) |
+| Junctions                                                         | Symbolic Links                                                            |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Must be local                                                     | Can target an remote path (eg UNC Path)                                   |
+| Path must be absolute (eg: c:\mydirectory)                        | Paths can be absolute or relative                                         |
+| No special rights required                                        | Requires admin (elevated) to create                                       |
+| Is listed as (dir in cmd): ```<JUNCTION>     Banana [c:\fruit]``` | Is listed as: ```<SYMLINKD>     Banana [\\server\fruit]```                |
+| "Dir Banana" will list all files and their size                   | Same as Junctions                                                         |
+| Viewing properties in explorer views a "real folder"              | Viewing properties in explorer views "File folder" (bascially a shortcut) |
 
 ### Making links
 

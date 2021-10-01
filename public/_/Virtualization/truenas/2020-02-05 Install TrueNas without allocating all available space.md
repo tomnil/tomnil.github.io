@@ -1,11 +1,4 @@
----
-layout: article
-title:  Install TrueNas without allocating all available space
-description:
-date: 2020-02-05
-tags: virtualization
-supertag: virtualization
----
+# 2020-02-05 Install TrueNas without allocating all available space
 
 # TrueNas installation
 

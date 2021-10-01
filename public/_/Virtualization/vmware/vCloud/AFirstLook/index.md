@@ -1,11 +1,4 @@
----
-layout: article
-title:  vCloud API - A first look
-description:
-date: 2019-09-09
-tags: vmware virtualization
-supertag: vmware
----
+# 2019-09-09 vCloud API - A first look
 
 This document describes some basic operations to get you started.
 

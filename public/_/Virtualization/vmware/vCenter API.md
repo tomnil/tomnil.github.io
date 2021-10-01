@@ -1,11 +1,4 @@
----
-layout: article
-title:  vCenter API using curl - tips & tricks
-description:
-date: 2019-09-09
-tags: vmware virtualization
-supertag: vmware
----
+# 2019-09-09 vCenter API using curl - tips & tricks
 
 ## Swagger
 

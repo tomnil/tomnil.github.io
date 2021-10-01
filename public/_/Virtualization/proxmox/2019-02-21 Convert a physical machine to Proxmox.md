@@ -1,21 +1,14 @@
----
-layout: article
-title:  How to covert a physical machine to be used with proxmox (p2v)
-description:
-date: 2019-02-21
-tags: virtualization proxmox 
-supertag: proxmox
----
+# 2019-02-21 How to covert a physical machine to be used with proxmox (p2v)
 
 Conversion needs to be made in two steps, first to VHD and then converted to a .qcow2 format.
 
 ## Capturing
 
-Dump the physical machine with Disk2VHD: https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd
+Dump the physical machine with Disk2VHD: <https://docs.microsoft.com/en-us/sysinternals/downloads/disk2vhd>
 
 ## Converting
 
-Next, install qemu (download from https://www.qemu.org/download/ or https://qemu.weilnetz.de/w64/ (windows))
+Next, install qemu (download from <https://www.qemu.org/download/> or <https://qemu.weilnetz.de/w64/> (windows))
 
 ```
 qemu-img convert -p -O qcow2 SOURCEFILE.VHDX DESTFILE.qcow2

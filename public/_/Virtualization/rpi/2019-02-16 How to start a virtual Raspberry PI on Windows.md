@@ -1,4 +1,5 @@
-# Description
+# 2019-02-16 How to start a virtual Raspberry PI on Windows
+
 
 This document describes the steps how to achieve a working Raspberry PI (X86)
 virtual machine.
@@ -23,9 +24,9 @@ using the following facts:
 
 | Name:                     | RPiX86 _(or whatever you prefer)_  |
 | ------------------------- | ---------------------------------- |
-| Type:                     | Linux                              |
-| Version:                  | Other Linux (32-bit)               |
-| Memory size:              | 1024MB                             |
+| Type:                     | Linux                              |
+| Version:                  | Other Linux (32-bit)               |
+| Memory size:              | 1024MB                             |
 | Hard disk:                | Choose “Create a Virtual Disk Now” |
 | Hard disk type:           | Choose “VDI”                       |
 | Storage on physical disk: | Choose “Dynamically Allocated”     |

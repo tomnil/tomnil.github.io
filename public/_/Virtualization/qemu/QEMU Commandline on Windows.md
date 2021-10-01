@@ -1,11 +1,4 @@
----
-layout: article
-title:  QEMU Commandline on Windows
-description: 
-date:   2019-03-11
-tags: virtualization qemu
-supertag: virtualization
----
+# 2019-03-11 QEMU Commandline on Windows
 
 ## Install and some tips
 
