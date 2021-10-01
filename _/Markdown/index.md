@@ -1,11 +1,4 @@
----
-layout: article
-title:  Markdown tips & tricks
-description: 
-date: 2020-03-01
-tags: tools
-supertag: tools
----
+# 2020-03-01 Markdown tips & tricks
 
 ## Emojis
 

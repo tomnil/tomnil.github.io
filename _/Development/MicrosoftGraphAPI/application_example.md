@@ -1,13 +1,6 @@
----
-layout: article
-title:  Microsoft Graph API - Application Logon
-description: 
-date: 2020-03-06
-tags: rest
-supertag: rest
----
+# 2020-03-06  - Application Logon
 
-### Application Logon
+## Application Logon
 
 Applications needs to be webapps (more or less) since the login function is working best if you redirect to Microsoft (which, after successful login, redirects back to your app). If you intend to write an naitive app you will have increased challenges with Two Factor Authentiction.
 

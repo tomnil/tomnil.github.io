@@ -1,11 +1,4 @@
----
-layout: article
-title: Creating a toke/mosquitto container using Docker
-description:
-date: 2019-09-09 
-tags: virtualization docker 
-supertag: docker
----
+# 2019-09-09 Creating a toke/mosquitto container using Docker
 
 `!`: Please read the [2019-09-09 Most common commands beginning with Docker](2019-09-09 Most common commands beginning with Docker) first.
 

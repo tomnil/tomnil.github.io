@@ -1,11 +1,4 @@
----
-layout: article
-title:  Introduction to Jekyll (and Github Pages)
-description: Jekyll is a tool to produce a static website built from your git repo at Github. Each time you change the repo, the website is rebuilt.
-date:   2019-07-28
-tags: jekyll git
-supertag: jekyll
----
+# 2019-07-28 Introduction to Jekyll (and Github Pages)
 
 Github has this cool functionality where every push to your git will execute a "Jekyll" build of your website (not to confuse witht the CI tool "Jenkins"). In this build, all .md files will be converted to .html (and .html will be processed and copied as well). Now, the real power lies in the ability to mix in Jekyll code which will execute on build. An example would be:
 
@@ -94,12 +87,12 @@ date:   2019-12-24
 
 Merry Christmas.
 ```
- 
+
 ## Collections
 
 It's also possible to create a group of articles (of any kind). These will be grouped as collections and to enable such a collection you need to do the following:
 
-1. Create an folder with a name of your choice. It must start with _. In this example we use _articles
+1. Create an folder with a name of your choice. It must start with _. In this example we use_articles
 2. Tell Jenkins it should activate this folder. The name of the folder and the name of the collection must match. Add the following to \config.yml.
 
 ```
@@ -131,12 +124,12 @@ it's configured the email is {{ site.email }}.
 {% endraw %}
 ```
 
-There's a number of variables to play around with, take a look here: https://jekyllrb.com/docs/variables/
+There's a number of variables to play around with, take a look here: <https://jekyllrb.com/docs/variables/>
 
 
 ## More on variables
 
-Create _layouts\post.html with the following contents. 
+Create _layouts\post.html with the following contents.
 
 ```
 {% raw %}
@@ -161,7 +154,7 @@ layout: default
 {% endraw %}
 ```
 
-Also, edit your christmas file to include atleast one tag. Example: 
+Also, edit your christmas file to include atleast one tag. Example:
 
 ```
 ---
@@ -178,11 +171,12 @@ The result will now for layout "post" include a tag list.
 
 There's a number of themes available for Jekyll, and they might be tricky to use at first sight. First of all, all templates produce a result of CSS, HTML and JavaScript (after Jekyll compile). The challenge might be in understanding how the css is built (that's another topic.). Anyway, when you've decided on which to use, do the following:
 
-Tip: Understanding themes - https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+Tip: Understanding themes - <https://jekyllrb.com/docs/themes/#overriding-theme-defaults>
 
 ### Modify "GemFile"
 
 This will add a reference to the Gem.
+
 ```
 gem "jekyll-theme-leap-day"
 ```
@@ -209,14 +203,15 @@ If you get an error, install local tools (see below)
 
 Local builds require tools to be installed. Follow this guide:
 
-https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
+<https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll>
 
 ### Running the build
+
 ```
 bundle exec jekyll serve --incremental
 ```
 
-This will start a webserver on http://127.0.0.1:4000 and watch for changed files.
+This will start a webserver on <http://127.0.0.1:4000> and watch for changed files.
 
 ### Verbose build
 
@@ -229,7 +224,7 @@ bundle exec jekyll build --verbose
 
 ## Cheat Sheet
 
-https://devhints.io/jekyll
+<https://devhints.io/jekyll>
 
 ## This site?
 
