@@ -1,13 +1,6 @@
----
-layout: article
-title: Microsoft SQL Server - Disk usage tricks
-description:
-date: 2020-03-01
-tags: sql
-supertag: sql
----
+# 2020-03-01 Microsoft SQL Server - Disk usage tricks
 
-:!: Code examples here have been collected during the years. I don't know where, sorry for not supplying credit.
+:!: Code examples here have been collected during the years, and some I've modified/written myself. For the copied ones, sorry for not supplying credit.
 
 ## Show total disk usage
 

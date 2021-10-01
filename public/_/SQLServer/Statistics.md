@@ -1,11 +1,4 @@
----
-layout: article
-title: Microsoft SQL Server - Performance counters
-description:
-date: 2020-03-01
-tags: sql
-supertag: sql
----
+# 2020-03-01 Microsoft SQL Server - Performance counters
 
 ## Show the OS performance counters
 

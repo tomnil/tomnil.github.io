@@ -172,7 +172,7 @@ export const Articles: Article[] = [
             "jira",
             "postman"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-04-10"),
@@ -230,7 +230,7 @@ export const Articles: Article[] = [
         Tags: [
             "rest"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-03-11"),
@@ -347,7 +347,7 @@ export const Articles: Article[] = [
             "homeautomation",
             "hass"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-08"),
@@ -405,7 +405,7 @@ export const Articles: Article[] = [
             "homeautomation",
             "homey"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-11"),
@@ -426,7 +426,7 @@ export const Articles: Article[] = [
             "jekyll",
             "git"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2016-09-27"),
@@ -483,7 +483,7 @@ export const Articles: Article[] = [
         Tags: [
             "tools"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-03-19"),
@@ -494,7 +494,7 @@ export const Articles: Article[] = [
             "turnkey",
             "proxmox"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2018-10-04"),
@@ -514,7 +514,7 @@ export const Articles: Article[] = [
         Tags: [
             "sql"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),
@@ -523,7 +523,7 @@ export const Articles: Article[] = [
         Tags: [
             "sql"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),
@@ -532,7 +532,7 @@ export const Articles: Article[] = [
         Tags: [
             "sql"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),
@@ -541,7 +541,7 @@ export const Articles: Article[] = [
         Tags: [
             "sql"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),
@@ -550,17 +550,17 @@ export const Articles: Article[] = [
         Tags: [
             "sql"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-09-09"),
-        URL: "/articles/Virtualization/2019-09-09 Creating a toke+mosquitto container using Docker.md",
+        URL: "/articles/Virtualization/2019-09-09 Creating a toke-mosquitto container using Docker.md",
         Title: "Creating a toke/mosquitto container using Docker",
         Tags: [
             "virtualization",
             "docker"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-09-09"),
@@ -570,7 +570,7 @@ export const Articles: Article[] = [
             "virtualization",
             "docker"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-02-21"),
@@ -580,7 +580,7 @@ export const Articles: Article[] = [
             "virtualization",
             "proxmox"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-02-21"),
@@ -590,7 +590,7 @@ export const Articles: Article[] = [
             "virtualization",
             "proxmox"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-02-05"),
@@ -600,7 +600,7 @@ export const Articles: Article[] = [
             "virtualization",
             "proxmox"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-03-11"),
@@ -610,7 +610,7 @@ export const Articles: Article[] = [
             "virtualization",
             "qemu"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2017-04-15"),
@@ -629,7 +629,7 @@ export const Articles: Article[] = [
         Tags: [
             "raspberrypi"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2017-04-15"),
@@ -647,7 +647,7 @@ export const Articles: Article[] = [
         Tags: [
             "raspberrypi"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2017-04-15"),

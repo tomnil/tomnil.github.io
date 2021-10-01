@@ -1,11 +1,4 @@
----
-layout: article
-title: Most common commands beginning with Docker
-description:
-date: 2019-09-09 
-tags: virtualization docker 
-supertag: docker
----
+# 2019-09-09 Most common commands beginning with Docker
 
 ## Container vs images
 

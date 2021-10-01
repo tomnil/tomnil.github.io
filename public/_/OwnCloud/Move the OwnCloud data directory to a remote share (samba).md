@@ -1,11 +1,4 @@
----
-layout: article
-title:  Move the OwnCloud data directory to a remote share (samba)
-description: 
-date: 2019-03-19
-tags: owncloud turnkey proxmox 
-supertag: owncloud
----
+# 2019-03-19 Move the OwnCloud data directory to a remote share (samba)
 
 `!` - Owncloud as of 2019-08 isn't very stable when the amount of files and changes increases. I have uninstalled the product, but still this information might be valuable.
 
