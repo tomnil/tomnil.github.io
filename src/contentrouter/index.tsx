@@ -27,13 +27,13 @@ function ContentRouter(props: { CurrentMode: "List" | "Grid", Articles: Article[
       <Route path="/mdviewer" render={(p: RouteComponentProps<{}, StaticContext, unknown>) => {
         const q = queryString.parse(p.location.search);
         const p1 = (q.path as string)?.replace("/articles", "/_");
-        return p1 ? <MarkDownViewer path={p1} /> : <h1>No path</h1>;
+        return p1 ? <MarkDownViewer fetchURL={p1} DocumentURL={q.path as string} /> : <h1>No path</h1>;
       }} />
 
 
       { /* Backwards compability with old site */}
       <Route path="/articles" render={(p: RouteComponentProps<{}, StaticContext, unknown>) => {
-        return <MarkDownViewer path={`${p.location.pathname.replace("/articles", "/_")}.md`} />;
+        return <MarkDownViewer fetchURL={`${p.location.pathname.replace("/articles", "/_")}${p.location.pathname.endsWith(".md") ? "" : ".md"}`} DocumentURL={p.location.pathname} />;
       }} />
 
 

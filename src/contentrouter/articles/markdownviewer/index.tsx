@@ -4,10 +4,23 @@ import './index.css';
 import path from 'path';
 import remarkGfm from 'remark-gfm';
 
-function ViewMarkdown(props: { path: string }): JSX.Element {
+function ViewMarkdown(props: { fetchURL: string, DocumentURL: string }): JSX.Element {
 
   const [markdown, setmarkdown] = React.useState<string>("");
   const [fetchDetails, setFetchDetails] = React.useState<{ name: string, path: string } | undefined>(undefined);
+
+
+  function FixURL(uri: string): string {
+
+    if (!fetchDetails)
+      return "";
+
+    if (uri.startsWith("http"))
+      return uri;
+
+    return uri.endsWith(".md") ? `${path.dirname(props.DocumentURL)}/${uri}` : `${fetchDetails.path}/${uri}`;
+
+  }
 
   // *****************************************
   // Use windows.location.origin to calculate document URL
@@ -16,10 +29,10 @@ function ViewMarkdown(props: { path: string }): JSX.Element {
   React.useEffect(() => {
     const rootPath = window.location.origin;  // "http?://servername:port/"
     setFetchDetails({
-      path: `${rootPath}${path.dirname(props.path)}`,
-      name: path.basename(props.path)
+      path: `${rootPath}${path.dirname(props.fetchURL)}`,
+      name: path.basename(props.fetchURL)
     });
-  }, [props.path]);
+  }, [props.fetchURL]);
 
   // *****************************************
   // Fetch the markdown document
@@ -59,8 +72,8 @@ function ViewMarkdown(props: { path: string }): JSX.Element {
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             children={markdown}
-            transformImageUri={(uri) => { return uri.startsWith("http") ? uri : `${fetchDetails.path}/${uri}`; }}
-            transformLinkUri={(uri) => { return uri.startsWith("http") ? uri : `${fetchDetails.path}/${uri}`; }}
+            transformImageUri={FixURL}
+            transformLinkUri={FixURL}
           />
         </>
         : <></>
