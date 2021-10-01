@@ -1,0 +1,25 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-github {
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 20px;
+    margin-left: auto;
+}
+
+.about-version {
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 20px;
+    margin-left: auto;
+}
+
+.about-enjoy {
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 20px;
+    margin-left: auto;
+}

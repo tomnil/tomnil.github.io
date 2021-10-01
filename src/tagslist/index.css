@@ -1,0 +1,31 @@
+.tags-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    background-color: #4276B6;
+    align-items: flex-end;
+    margin: 10px 20px 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+}
+
+.tags-list-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags-list-item {
+    display: flex;
+    margin: 5px;
+}
+
+.tags-clear-filter {
+    margin-top: 15px;
+    padding: 7px 14px 7px 14px;
+    border-radius: 5px;
+    background-color: #6892c5;
+    font-size: 12px;
+    box-shadow: 1px 1px 2px #eeeeee;
+}

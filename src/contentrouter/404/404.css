@@ -1,0 +1,16 @@
+.e404-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dotted;
+    border-width: 2px;
+    border-color: blue;
+}
+
+.huge {
+    font-size: 128px;
+}
+
+.medium {
+    font-size: 28px;
+}

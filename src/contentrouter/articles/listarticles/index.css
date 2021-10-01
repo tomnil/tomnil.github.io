@@ -1,0 +1,17 @@
+.listarticles-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.listarticles-super-headline {
+    border-bottom: 1px solid black;
+}
+
+.listarticles-year {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    max-width: 200px;
+    border-bottom: 1px solid;
+}

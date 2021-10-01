@@ -1,0 +1,9 @@
+.rendergroup-container-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rendergroup-container {
+    display: flex;
+    flex-direction: column;
+}

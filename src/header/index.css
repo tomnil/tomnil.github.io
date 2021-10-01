@@ -1,0 +1,33 @@
+.header-container {
+    display: flex;
+    min-height: 100px;
+    background-color: #4276B6;
+    box-shadow: 3px 5px 5px #eeeeee;
+    border-radius: 5px;
+}
+
+.header-headline {
+    font-size: 36px;
+    font-weight: 700;
+    padding: 18px 0 0 30px;
+    text-shadow: 2px 2px 4px #848383;
+}
+
+.header-headline-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.header-displaybuttons-container {
+    display: flex;
+    margin-right: 20px;
+    align-self: center;
+    height: 100%;
+}
+
+.header-subline {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 0 0 50px;
+    text-shadow: 1px 1px 2px #848383;
+}

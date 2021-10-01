@@ -1,0 +1,47 @@
+.item {
+    display: flex;
+    margin-top: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 95%;
+}
+
+.item-date {
+    color: #4276B6;
+    margin-left: 10px;
+    align-self: center;
+    white-space: nowrap;
+}
+
+.item-headline {
+    display: flex;
+    flex-grow: 1;
+    color: #4276B6;
+    margin-left: 10px;
+    align-self: center;
+}
+
+.item-headline-href {
+    text-decoration: none;
+}
+
+.item-tags-container {
+    display: flex;
+    margin-right: 20px;
+}
+
+.item-tags {
+    display: flex;
+    color: #4276B6;
+    margin-left: 5px;
+    font-size: 70%;
+    align-self: center;
+}
+
+.color:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.color:nth-child(odd) {
+    background-color: #fcfcfc;
+}
