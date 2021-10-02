@@ -745,7 +745,130 @@ export const Articles: Article[] = [
             "windows"
         ],
         Verified: true
+    },
+    {
+        Date: new Date("2021-04-17"),
+        URL: "https://tomasnilsson71.medium.com/microsoft-graph-email-access-8b51bdd56210",
+        Site: "Medium",
+        Title: "Microsoft Graph — Email Access",
+        Excerpt: "TL;DR; After this article, you will be able to Read and modify a users O365 mailbox contents using Microsoft Graph.",
+        Tags: [
+            "windows"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-05-09"),
+        URL: "https://tomasnilsson71.medium.com/electron-react-with-typescript-7decae392b50",
+        Site: "Medium",
+        Title: "Electron + React with Typescript",
+        Excerpt: "Adding Desktop support for a React app is super easy. You have your already done React app running at port 3000 and all you…",
+        Tags: [
+            "react",
+            "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-05-09"),
+        URL: "https://tomasnilsson71.medium.com/webpack-4-react-with-typescript-c62785bc71b6",
+        Site: "Medium",
+        Title: "WebPack 4 + React with TypeScript",
+        Excerpt: "This guide shows how to setup WebPack with the React “create-react-app” using TypeScript and Hot Reloading.",
+        Tags: [
+            "react", "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-06-08"),
+        URL: "https://javascript.plainenglish.io/the-guide-to-kickstarting-backend-typescript-development-e2656c2f5d17",
+        Site: "Medium",
+        Title: "The Guide to Kickstarting Backend TypeScript Development",
+        Excerpt: "This article requires you to have at least some TypeScript knowledge, as several TypeScript topics are covered.",
+        Tags: [
+            "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-08-16"),
+        URL: "https://javascript.plainenglish.io/typescript-and-global-variables-in-node-js-59c4bf40cb31",
+        Site: "Medium",
+        Title: "TypeScript and Global Variables in Node.js",
+        Excerpt: "How to make global variables in Node.js using TypeScript and make sure the types are correct.",
+        Tags: [
+            "nodejs", "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-08-23"),
+        URL: "https://javascript.plainenglish.io/how-to-automatically-convert-typescript-types-to-runtime-validators-5b06ee269b13",
+        Site: "Medium",
+        Title: "How to Automatically Convert TypeScript Types to Runtime Validators",
+        Excerpt: "This article will show how to generate runtime validators from TypeScript files.",
+        Tags: [
+            "nodejs", "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-09-07"),
+        URL: "https://javascript.plainenglish.io/how-to-write-an-npm-package-without-publishing-to-git-npm-68068caf466f",
+        Site: "Medium",
+        Title: "How to Write an NPM Package Without Publishing to Git/NPM",
+        Excerpt: "Want to write an npm package without publishing to npm or git? And be able to use it in a project? Well, keep reading!",
+        Tags: [
+            "nodejs", "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-09-13"),
+        URL: "https://javascript.plainenglish.io/how-to-convert-node-js-code-from-javascript-to-typescript-8e7d031a8f49",
+        Site: "Medium",
+        Title: "How to Convert Node.js Code from JavaScript to TypeScript",
+        Excerpt: "This guide contains a lot of information on how to begin converting an existing JavaScript project to TypeScript.",
+        Tags: [
+            "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-09-21"),
+        URL: "https://javascript.plainenglish.io/react-hooks-demystified-2a8370076b82",
+        Site: "Medium",
+        Title: "React Hooks Demystified",
+        Excerpt: "React Hooks is really cool, but it’s not a matter of magic. This article will go through the basics and hopefully make some things clearer.",
+        Tags: [
+            "react", "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-09-23"),
+        URL: "https://javascript.plainenglish.io/typed-express-request-and-response-with-typescript-7277aea028c",
+        Site: "Medium",
+        Title: "Typed Express Request and Response with TypeScript",
+        Excerpt: "This article goes through some of the ways to add TypeScript to the Express.Request and Express.Response objects.",
+        Tags: [
+            "typescript"
+        ],
+        Verified: true
+    },
+    {
+        Date: new Date("2021-09-27"),
+        URL: "https://javascript.plainenglish.io/how-to-set-up-an-api-with-jwt-req-user-and-route-security-52f8da08cda6",
+        Site: "Medium",
+        Title: "How to Set Up an API with JWT, req.User and Route Security",
+        Excerpt: "After reading this article, you’ll understand how to create an API in Node.js/TypeScript with functions such as…",
+        Tags: [
+            "nodejs", "typescript"
+        ],
+        Verified: true
     }
+
 ];
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Article, Tag } from '../../../types';
 import './index.css';
+import Launch from '../../../media/launchb.png';
 
 function Card(props: { Article: Article, ApplyFilter: (iTag: Tag | undefined) => void, RedirectTo: (iURL: string) => void }): JSX.Element {
 
@@ -10,11 +11,16 @@ function Card(props: { Article: Article, ApplyFilter: (iTag: Tag | undefined) =>
 
     return <div style={{ opacity: 1, animation: `1s ease-out ${(Math.random() / 2).toFixed(2)}s 1 slideInFromLeft` }}>
         <div className="card-container" style={{ backgroundColor: `${article.Verified ? "inherit" : "yellow"}` }}>
-            <div className="card-headline" onClick={() => props.RedirectTo(destination)}>
-                <div>{article.Title}</div>
-                <div className="card-description">{article.Excerpt}</div>
-
-            </div>
+            {article.Site === undefined
+                ? <div className="card-headline" onClick={() => props.RedirectTo(destination)}>
+                    <div>{article.Title}</div>
+                    <div className="card-description">{article.Excerpt}</div>
+                </div>
+                : <div className="card-headline" >
+                    <div><a href={article.URL}>{article.Title}</a><img src={Launch} height="10px" /></div>
+                    <div className="card-description">{article.Excerpt}</div>
+                </div>
+            }
             <div className="card-bottom">
                 <div className="card-tags">
                     {article.Tags.map(t => <div className="card-tag" onClick={() => props.ApplyFilter(t)}>#{t}</div>)}
