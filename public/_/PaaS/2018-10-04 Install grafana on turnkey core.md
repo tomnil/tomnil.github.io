@@ -1,13 +1,4 @@
----
-layout: article
-title: Install grafana on turnkey core
-description:
-date: 2018-10-04 
-tags: PaaS grafana turnkey 
-supertag: grafana
----
-
-:!: Old article.
+# 2018-10-04  Install grafana on turnkey core
 
 Package details [http://docs.grafana.org/installation/debian/](http://docs.grafana.org/installation/debian/)
 

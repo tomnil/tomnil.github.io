@@ -1,11 +1,4 @@
----
-layout: article
-title: How to setup a Windows Share (Samba) in Raspberry PI
-description:
-date: 2017-11-28
-tags: rpi linux
-supertag: rpi 
----
+# 2017-11-28 How to setup a Windows Share (Samba) in Raspberry PI
 
 ## How to setup a Windows Share (Samba) in Raspberry PI
 
@@ -73,4 +66,4 @@ Replace TheHostName with the name of your machine. From Windows open:
 \\TheHostName\\pihome
 ```
 
-On the prompt, enter username and password. To test, copy a file (After a file has been copied, it’s available in the ```/home/pi``` folder). 
+On the prompt, enter username and password. To test, copy a file (After a file has been copied, it’s available in the ```/home/pi``` folder).

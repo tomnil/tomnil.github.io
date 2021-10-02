@@ -1,11 +1,4 @@
----
-layout: article
-title:  Migrate all your email from one site to another (command line)
-description: 
-date:   2019-03-11
-tags: tools mail
-supertag: tools
----
+# 2019-03-11 Migrate all your email from one site to another (command line)
 
 ## Prerequisites
 

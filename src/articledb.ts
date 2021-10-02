@@ -435,7 +435,7 @@ export const Articles: Article[] = [
         Tags: [
             "tools"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2018-09-17"),
@@ -444,7 +444,7 @@ export const Articles: Article[] = [
         Tags: [
             "linux"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-02-21"),
@@ -454,7 +454,7 @@ export const Articles: Article[] = [
         Tags: [
             "linux"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2017-11-28"),
@@ -464,7 +464,7 @@ export const Articles: Article[] = [
             "rpi",
             "linux"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2019-03-11"),
@@ -474,7 +474,7 @@ export const Articles: Article[] = [
             "tools",
             "mail"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),
@@ -505,7 +505,7 @@ export const Articles: Article[] = [
             "grafana",
             "turnkey"
         ],
-        Verified: false
+        Verified: true
     },
     {
         Date: new Date("2020-03-01"),

@@ -1,11 +1,4 @@
----
-layout: article
-title: Cygwin - Linux tools on Windows
-description:
-date: 2016-09-27
-tags: tools
-supertag: tools
----
+# 2016-09-27 Cygwin - Linux tools on Windows
 
 Cygwin is a pretty cool way to add Linux tools to your Windows system, without running a fullblown Virtual Machine (or Ubuntu on Windows).
 
