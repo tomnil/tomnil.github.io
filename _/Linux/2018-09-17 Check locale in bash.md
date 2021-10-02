@@ -1,11 +1,4 @@
----
-layout: article
-title: Change Locale on bash
-description:
-date: 2018-09-17
-tags: linux
-supertag: linux 
----
+# 2018-09-17 Change Locale on bash
 
 If you have troubles with locale in bash, check the `/etc/default/locale`. It should look something like:
 

@@ -1,11 +1,4 @@
----
-layout: article
-title: dd with progressbar
-description: dd is super silent by default, but it's possible to add a progressbar
-date: 2019-02-21
-tags: linux
-supertag: linux
----
+# 2019-02-21 dd is super silent by default, but it's possible to add a progressbar
 
 The secret is to pipe the entire process through ```pv```:
 
