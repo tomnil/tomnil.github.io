@@ -8,6 +8,7 @@ pre {
     background-color: #eeeeee;
     padding: 15px;
     border-radius: 5px;
+    white-space: pre-wrap;
 }
 
 h1 {
