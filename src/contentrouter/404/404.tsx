@@ -1,5 +1,7 @@
 import "./404.css";
+
 import React from "react";
+
 
 const FourhundredAndFour = (): JSX.Element => {
 

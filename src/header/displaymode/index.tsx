@@ -1,8 +1,9 @@
-import React from 'react';
-import Grid from './grid.png';
-import List from './list.png';
-import './index.css';
+import "./index.css";
 
+import React from "react";
+
+import Grid from "./grid.png";
+import List from "./list.png";
 
 
 const DisplayMode = (props: { CurrentMode: "List" | "Grid", SetDisplayMode: (mode: "List" | "Grid") => void }): JSX.Element => {

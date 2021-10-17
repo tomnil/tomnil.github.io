@@ -1,6 +1,9 @@
-import React from 'react';
-import { Article, Tag } from '../types';
-import './index.css';
+import "./index.css";
+
+import React from "react";
+
+import { Article, Tag } from "../types";
+
 
 const TagsList = (props: { Articles: Article[], ApplyFilter: (iTag: Tag | undefined) => void, IsFiltered: boolean }): JSX.Element => {
 

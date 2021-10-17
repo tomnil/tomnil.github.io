@@ -1,13 +1,16 @@
-import React from 'react';
-import MarkDownViewer from './articles/markdownviewer';
-import Cards from './articles/listarticles';
-import queryString from 'query-string';
-import { Switch, Route, RouteComponentProps } from "react-router-dom";
-import { StaticContext } from 'react-router';
-import { Article, Tag } from '../types';
-import './index.css';
-import SiteInfo from './siteinfo';
-import ContactMe from './contactme';
+import "./index.css";
+
+import queryString from "query-string";
+import React from "react";
+import { StaticContext } from "react-router";
+import { Route, RouteComponentProps, Switch } from "react-router-dom";
+
+import { Article, Tag } from "../types";
+import Cards from "./articles/listarticles";
+import MarkDownViewer from "./articles/markdownviewer";
+import ContactMe from "./contactme";
+import SiteInfo from "./siteinfo";
+
 
 function ContentRouter(props: { CurrentMode: "List" | "Grid", Articles: Article[], ApplyFilter: (iTag: Tag | undefined) => void, RedirectTo: (iURL: string) => void }): JSX.Element {
 

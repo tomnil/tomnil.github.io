@@ -1,7 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './index.css';
-import DisplayMode from './displaymode';
+import "./index.css";
+
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+import DisplayMode from "./displaymode";
+
 
 const Header = (props: { CurrentMode: "List" | "Grid", SetDisplayMode: (mode: "List" | "Grid") => void }): JSX.Element => {
 

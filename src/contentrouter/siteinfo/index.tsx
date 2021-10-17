@@ -1,7 +1,10 @@
-import React from 'react';
-import './index.css';
-import MediumLogo from '../../media/medium_logo.png';
-import Launch from '../../media/launchb.png';
+import "./index.css";
+
+import React from "react";
+
+import Launch from "../../media/launchb.png";
+import MediumLogo from "../../media/medium_logo.png";
+
 
 const SiteInfo = (): JSX.Element => {
 

@@ -1,8 +1,9 @@
-import React from 'react';
-import { Article, Tag } from '../../../types';
-import './index.css';
-import Launch from '../../../media/launchb.png';
+import "./index.css";
 
+import React from "react";
+
+import Launch from "../../../media/launchb.png";
+import { Article, Tag } from "../../../types";
 
 
 function Card(props: { Article: Article, ApplyFilter: (iTag: Tag | undefined) => void, RedirectTo: (iURL: string) => void }): JSX.Element {

@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import './index.css';
-import path from 'path';
-import remarkGfm from 'remark-gfm';
+import "./index.css";
+
+import path from "path";
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 
 function ViewMarkdown(props: { fetchURL: string, DocumentURL: string }): JSX.Element {
 

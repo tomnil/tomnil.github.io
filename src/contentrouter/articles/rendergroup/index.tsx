@@ -1,8 +1,10 @@
-import React from 'react';
-import { Article, Tag } from '../../../types';
-import AsCard from '../ascard';
-import AsItem from '../asitem';
-import './index.css';
+import "./index.css";
+
+import React from "react";
+
+import { Article, Tag } from "../../../types";
+import AsCard from "../ascard";
+import AsItem from "../asitem";
 
 
 function RenderGroup(props: { CurrentMode: "List" | "Grid", Articles: Article[], ApplyFilter: (iTag: Tag | undefined) => void, RedirectTo: (iURL: string) => void }): JSX.Element {

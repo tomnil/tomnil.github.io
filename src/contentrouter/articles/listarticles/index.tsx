@@ -1,7 +1,10 @@
-import React from 'react';
-import { Article, Tag } from '../../../types';
-import './index.css';
-import RenderGroup from '../rendergroup';
+import "./index.css";
+
+import React from "react";
+
+import { Article, Tag } from "../../../types";
+import RenderGroup from "../rendergroup";
+
 
 function ListArticles(props: { CurrentMode: "List" | "Grid", Articles: Article[], ApplyFilter: (iTag: Tag | undefined) => void, RedirectTo: (iURL: string) => void }): JSX.Element {
 
