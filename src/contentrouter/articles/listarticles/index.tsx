@@ -22,7 +22,7 @@ function ListArticles(props: { CurrentMode: "List" | "Grid", Articles: Article[]
         <h1 className="listarticles-super-headline">Article List</h1>
         <div className="listarticles-container" >
             {
-                years.map(year => <>
+                years.map(year => <div key={year}>
                     <div className="listarticles-year">{year}</div>
                     <RenderGroup
                         CurrentMode={props.CurrentMode}
@@ -30,7 +30,7 @@ function ListArticles(props: { CurrentMode: "List" | "Grid", Articles: Article[]
                         ApplyFilter={props.ApplyFilter}
                         RedirectTo={props.RedirectTo}
                     />
-                </>
+                </div>
                 )
             }
         </div>

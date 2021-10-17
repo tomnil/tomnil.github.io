@@ -17,7 +17,7 @@ const TagsList = (props: { Articles: Article[], ApplyFilter: (iTag: Tag | undefi
     return <>
         <div className="tags-container">
             <div className="tags-list-container">
-                {tags.map(t => <div className="tags-list-item" onClick={() => props.ApplyFilter(t)}>#{t}</div>)}
+                {tags.map(t => <div key={t} className="tags-list-item" onClick={() => props.ApplyFilter(t)}>#{t}</div>)}
             </div>
             {props.IsFiltered
                 ? <div className="tags-clear-filter" onClick={() => props.ApplyFilter(undefined)}>View all</div>

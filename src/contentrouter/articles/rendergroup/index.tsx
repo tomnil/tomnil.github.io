@@ -15,7 +15,7 @@ function RenderGroup(props: { CurrentMode: "List" | "Grid", Articles: Article[],
 
     return <>
       <div className="rendergroup-container">
-        {props.Articles.map(article => <AsItem Article={article} ApplyFilter={props.ApplyFilter} RedirectTo={props.RedirectTo} />)}
+        {props.Articles.map(article => <AsItem key={`I${article.Title}`} Article={article} ApplyFilter={props.ApplyFilter} RedirectTo={props.RedirectTo} />)}
       </div>
     </>;
 
@@ -23,7 +23,7 @@ function RenderGroup(props: { CurrentMode: "List" | "Grid", Articles: Article[],
 
     return <>
       <div className="rendergroup-container-wrap">
-        {props.Articles.map(article => <AsCard Article={article} ApplyFilter={props.ApplyFilter} RedirectTo={props.RedirectTo} />)}
+        {props.Articles.map(article => <AsCard key={`C${article.Title}`} Article={article} ApplyFilter={props.ApplyFilter} RedirectTo={props.RedirectTo} />)}
       </div>
     </>;
 }
