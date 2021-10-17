@@ -1,6 +1,4 @@
-# 2020-07-18 vCloud - postman setup
-
-## Create a local user
+# 2020-07-18 vCloud - Create a local user
 
 The available ```Roles``` for an org is found in the call ```https://vdc.company.com/api/admin/org/ORGID```
 

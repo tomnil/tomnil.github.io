@@ -707,10 +707,9 @@ export const Articles: Article[] = [
     {
         Date: new Date("2020-07-18"),
         URL: "/articles/Virtualization/vmware/vCloud/orgusermanagement.md",
-        Title: "vCloud - postman setup",
+        Title: "vCloud - Create a local user",
         Tags: [
-            "vmware",
-            "virtualization",
+            "vcloud",
             "postman"
         ],
         Verified: true
@@ -720,8 +719,7 @@ export const Articles: Article[] = [
         URL: "/articles/Virtualization/vmware/vCloud/postman.md",
         Title: "vCloud - postman setup",
         Tags: [
-            "vmware",
-            "virtualization",
+            "vcloud",
             "postman"
         ],
         Verified: true
