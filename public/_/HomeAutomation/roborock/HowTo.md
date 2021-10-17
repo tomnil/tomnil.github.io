@@ -4,6 +4,8 @@ There are a number of ways of fetching the token, but this document focuses on a
 
 ## Install the Xiaomi App
 
+⚠️ **Warning** This app may not be safe to use. Install on a separate phone, and wipe the phone once you've got the token.
+
 * From the phone, download the [com-xiaomi-smarthome-5.4.54.apk](https://android-apk.org/com.xiaomi.smarthome/43397902-mi-home/) file. It will end up in the "Downloads folder"
 * Uninstall your current Xiaomi Mi Home app (if you have it).
 * Open File Manager on the phone, navigate to "Downloads".
