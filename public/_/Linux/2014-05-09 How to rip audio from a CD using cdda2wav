@@ -1,0 +1,35 @@
+# 2014-05-09 How to rip audio from a CD using cdda2wav
+
+This text is based on Cygwin + Windows.
+
+## Finding the CDRom
+
+Run:
+
+```
+cdda2wav --scanbus
+```
+
+In the output, look for something like this:
+
+```html
+2,0,0   200) 'TSSTcorp' 'CDDVDW SH-S223Q ' 'SB01' Removable CD-ROM
+```
+
+Look for the numbers (2,0,0) - you'll need them.
+
+It's also possible to run "cdda2wav dev=help" for more information
+
+## Ripping to wav
+
+Run
+
+```
+cdda2wav -cddb=0 -device=2,0,0 --alltracks
+```
+
+* *cddb* will automatically rename the tracks correctly (if possible)
+* device=the numbers from the above step
+* alltracks = rip entire cd
+
+Output will stored in the current directory.

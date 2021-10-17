@@ -1,4 +1,6 @@
-import { Article } from './types';
+import { Article } from "./types";
+
+
 export const Articles: Article[] = [
     {
         Date: new Date("2014-01-03"),
@@ -426,6 +428,20 @@ export const Articles: Article[] = [
             "jekyll",
             "git"
         ],
+        Verified: true
+    },
+    {
+        Date: new Date("2014-01-17"),
+        URL: "/articles/Linux/2014-01-17 How to rip a broken DVD (with crc error) using ddrescue.md",
+        Title: "How to rip a broken DVD (with crc error) using ddrescue",
+        Tags: ["audiovideo"],
+        Verified: true
+    },
+    {
+        Date: new Date("2014-05-09"),
+        URL: "/articles/Linux/2014-05-09 How to rip audio from a CD using cdda2wav",
+        Title: "How to rip audio from a CD using cdda2wav",
+        Tags: ["audiovideo"],
         Verified: true
     },
     {
