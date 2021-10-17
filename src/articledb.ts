@@ -373,7 +373,7 @@ export const Articles: Article[] = [
     },
     {
         Date: new Date("2019-09-09"),
-        URL: "/articles/HomeAutomation/Measure_luminance_and_create_percentage_in_Homey/2019-09-10 Creating a value between 0-100 based on luminance).md",
+        URL: "/articles/HomeAutomation/Measure_luminance_and_create_percentage_in_Homey/2019-09-10 Set light on luminance.md",
         Title: "Measure luminance and create percentage in Homey",
         Tags: [
             "homeautomation",
