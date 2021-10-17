@@ -3,6 +3,7 @@ import "./index.css";
 import path from "path";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 
 
@@ -76,6 +77,10 @@ function ViewMarkdown(props: { fetchURL: string, DocumentURL: string }): JSX.Ele
             children={markdown}
             transformImageUri={FixURL}
             transformLinkUri={FixURL}
+            components={{
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              a: ({ node, ...props }) => <Link to={props.href ?? "/"}>{props.children}</Link>
+            }}
           />
         </>
         : <></>
