@@ -1,5 +1,7 @@
-import React from 'react';
-import './index.css';
+import "./index.css";
+
+import React from "react";
+
 
 const About = (): JSX.Element => {
 
@@ -11,7 +13,7 @@ const About = (): JSX.Element => {
             <h3><a href="/about" style={{ color: "black" }}>Contact</a></h3>
         </div>
         <div className="about-version">
-            v20211001
+            v20211017
         </div>
     </div >;
 };

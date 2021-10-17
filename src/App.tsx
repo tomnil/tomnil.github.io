@@ -1,13 +1,16 @@
-import React from 'react';
-import './app.css';
-import Header from './header';
-import ContentRouter from './contentrouter';
-import TagsList from './tagslist';
-import VersionInfo from './versioninfo';
-import { Articles } from './articledb';
-import { Tag } from './types';
-import { useHistory } from 'react-router-dom';
-import DisplayMode from './header/displaymode';
+import "./app.css";
+
+import React from "react";
+import { useHistory } from "react-router-dom";
+
+import { Articles } from "./articledb";
+import ContentRouter from "./contentrouter";
+import Header from "./header";
+import MouseTrail from "./mousetrail";
+import TagsList from "./tagslist";
+import { Tag } from "./types";
+import VersionInfo from "./versioninfo";
+
 
 function Website(): JSX.Element {
 
@@ -35,6 +38,7 @@ function Website(): JSX.Element {
   }
 
   return <>
+    <MouseTrail />
     <Header CurrentMode={displayMode} SetDisplayMode={(iMode: "Grid" | "List") => setDisplayMode(iMode)} />
     <div className="main-container skinny-look">
       <div>
